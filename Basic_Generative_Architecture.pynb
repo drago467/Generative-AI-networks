@@ -1,0 +1,75 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNZe/oNiJtKpoDFLPuUWDj9",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/drago467/Generative-AI-networks/blob/main/Basic_Generative_Architecture.pynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "0Nf3j6fbEAa0"
+      },
+      "outputs": [],
+      "source": [
+        "#import the libraries\n",
+        "import torch, pdb\n",
+        "from torch.utils.data import DataLoader\n",
+        "from torch import nn\n",
+        "from torchvision import transforms\n",
+        "from torchvision.datasets import MNIST\n",
+        "from torchvision.utils import make_grid\n",
+        "from tqdm.auto import tqdm\n",
+        "import matplotlib.pyplot as plt"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# visualization function\n",
+        "def show(tensor, ch=1, size=(28,28), num=16):\n",
+        "  #tensor: 128 x 728\n",
+        "  data=tensor.detach().cpu().view(-1,ch,size) # 128 x 1 x 28 x 28\n",
+        "  grid = make_grid(data[:num], nrows=4).permute(1,2,0) # 1 x 28 x 28 = 28 x 28 x 1\n",
+        "  plt.imshow(grid)\n",
+        "  plt.show()"
+      ],
+      "metadata": {
+        "id": "uyrJMRZ1Im_P"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "0EKbYb1YSs05"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
